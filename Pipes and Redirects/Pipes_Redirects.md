@@ -8,11 +8,11 @@ Linux provides powerful ways to handle data flow between commands and files usin
 | Pipe    |   '|'  |    '|'      | Pass the **output of one command** as **input to another** | `ls -l | less` |
 
 Other Examples:
-```bash
+```
 ps aux | grep ssh         # Find processes related to ssh
 
 cat file.txt | wc -l      # Count number of lines in file.txt
-```bash
+```
 
 2️⃣ Output Redirection
 | Operator | Description                                     | Example                       |
@@ -21,10 +21,11 @@ cat file.txt | wc -l      # Count number of lines in file.txt
 | `>>`     | Redirect output to a file (append if exists)    | `echo "New Line" >> file.txt` |
 
 Examples:
-
+```
 ls -l > listing.txt                  # Save directory listing to a file
 
 echo "Another line" >> file.txt      # Append line to file
+```
 
 Tip: Use > when you want a fresh file, >> to add to existing file.
 
@@ -33,8 +34,11 @@ Tip: Use > when you want a fresh file, >> to add to existing file.
 | -------- | ------------------------------------- | --------------------- |
 | `<`      | Use a file as **input** for a command | `sort < unsorted.txt` |
 
+Examples:
+```
 wc -l < file.txt      # Count lines from a file
 
+```
 4️⃣ Combining Pipes and Redirects
 
 You can combine multiple commands to create powerful workflows:
