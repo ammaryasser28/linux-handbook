@@ -1,5 +1,4 @@
 🐧 Linux File System
-
 The Linux File System defines how data and files are organized and accessed in a Linux operating system.
 Unlike Windows (which uses drives like C:\ or D:\), Linux uses a single tree structure that starts from the root directory /.
 
@@ -9,32 +8,7 @@ Unlike Windows (which uses drives like C:\ or D:\), Linux uses a single tree str
 
 
 🌳 File System Hierarchy (Tree Structure)
-/
-├── bin        → Essential system commands (ls, cp, mv, cat)
-├── boot       → Boot files and Linux kernel
-├── dev        → Device files (e.g. hard drives, USBs)
-├── etc        → System and application configuration files
-├── home       → Users’ home directories
-│   ├── amr
-│   └── guest
-├── lib        → Shared libraries for programs in /bin and /sbin
-├── media      → Mount points for removable media (USB/CD)
-├── mnt        → Temporary mount point for manual mounting
-├── opt        → Optional or third-party software
-├── proc       → Virtual directory containing process and system info
-├── root       → Home directory for the root (admin) user
-├── run        → Runtime data for system services
-├── sbin       → System binaries (used by root user)
-├── srv        → Data for services like FTP or web servers
-├── tmp        → Temporary files
-├── usr        → User programs, documentation, libraries
-│   ├── bin
-│   ├── lib
-│   └── share
-└── var        → Variable data such as logs, mail, cache
-    ├── log
-    ├── mail
-    └── tmp
+<pre> / ├── bin → Essential system commands (ls, cp, mv, cat) ├── boot → Boot files and Linux kernel ├── dev → Device files (e.g. hard drives, USBs) ├── etc → System and application configuration files ├── home → Users’ home directories │ ├── amr │ └── guest ├── lib → Shared libraries for programs in /bin and /sbin ├── media → Mount points for removable media (USB/CD) ├── mnt → Temporary mount point for manual mounting ├── opt → Optional or third-party software ├── proc → Virtual directory containing process and system info ├── root → Home directory for the root (admin) user ├── run → Runtime data for system services ├── sbin → System binaries (used by root user) ├── srv → Data for services like FTP or web servers ├── tmp → Temporary files ├── usr → User programs, documentation, libraries │ ├── bin │ ├── lib │ └── share └── var → Variable data such as logs, mail, cache ├── log ├── mail └── tmp </pre>
 
 
 
