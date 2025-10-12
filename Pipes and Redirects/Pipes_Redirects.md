@@ -7,6 +7,7 @@ Linux provides powerful ways to handle data flow between commands and files usin
 | ------- | ------ | ----------- | ---------------------------------------------------------- | ------ | ----- |
 | Pipe    |   '|'  |    '|'      | Pass the **output of one command** as **input to another** | `ls -l | less` |
 
+
 Other Examples:
 ```
 ps aux | grep ssh         # Find processes related to ssh
