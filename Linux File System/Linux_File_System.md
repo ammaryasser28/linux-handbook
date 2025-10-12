@@ -62,6 +62,7 @@ Unlike Windows (which uses drives like C:\ or D:\), Linux uses a single tree str
 
 
 💡 Key Notes
+
 Linux is case-sensitive — /Home ≠ /home.
 Everything (even hardware) is treated as a file.
 System configuration is stored in plain text files under /etc/.
@@ -70,5 +71,6 @@ Permissions control who can read, write, or execute each file.
 
 
 🚀 Summary
+
 The Linux file system is built around simplicity and consistency —
 everything starts from /, and every component of the system (commands, configuration, hardware) is accessed through it.
