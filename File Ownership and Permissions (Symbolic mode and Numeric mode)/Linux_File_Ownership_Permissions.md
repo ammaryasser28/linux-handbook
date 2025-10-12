@@ -15,8 +15,9 @@ Check ownership with:
 ls -l filename
 
 Example output:
-
+```
 -rw-r--r-- 1 amr users 1024 Oct 12 13:00 file.txt
+```
 
 amr → owner
 
@@ -87,9 +88,9 @@ Z → others permissions
 
 
 Example:
-
+```
 chmod 755 script.sh
-
+```
 7 → owner: rwx
 
 5 → group: r-x
