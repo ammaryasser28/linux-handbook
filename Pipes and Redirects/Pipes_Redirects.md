@@ -9,9 +9,9 @@ Linux provides powerful ways to handle data flow between commands and files usin
 
 Other Examples:
 
-ps aux | grep ssh      # Find processes related to ssh
+ps aux | grep ssh         # Find processes related to ssh
 
-cat file.txt | wc -l   # Count number of lines in file.txt
+cat file.txt | wc -l      # Count number of lines in file.txt
 
 2️⃣ Output Redirection
 | Operator | Description                                     | Example                       |
@@ -21,9 +21,9 @@ cat file.txt | wc -l   # Count number of lines in file.txt
 
 Examples:
 
-ls -l > listing.txt        # Save directory listing to a file
+ls -l > listing.txt                  # Save directory listing to a file
 
-echo "Another line" >> file.txt  # Append line to file
+echo "Another line" >> file.txt      # Append line to file
 
 Tip: Use > when you want a fresh file, >> to add to existing file.
 
@@ -32,7 +32,7 @@ Tip: Use > when you want a fresh file, >> to add to existing file.
 | -------- | ------------------------------------- | --------------------- |
 | `<`      | Use a file as **input** for a command | `sort < unsorted.txt` |
 
-wc -l < file.txt   # Count lines from a file
+wc -l < file.txt      # Count lines from a file
 
 4️⃣ Combining Pipes and Redirects
 
