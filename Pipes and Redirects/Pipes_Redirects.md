@@ -3,10 +3,8 @@
 Linux provides powerful ways to handle data flow between commands and files using pipes (|) and redirects (>, >>, <).
 
 1️⃣ Pipes (|)
-| Concept | Symbol | Description | Example                                                    |        |       |
-| ------- | ------ | ----------- | ---------------------------------------------------------- | ------ | ----- |
-| Pipe    |   '|'  |    '|'      | Pass the **output of one command** as **input to another** | `ls -l | less` |
 
+Pipe (|) passes the output of one command as input to another command.
 
 Other Examples:
 ```
