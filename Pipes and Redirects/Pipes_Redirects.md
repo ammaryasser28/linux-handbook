@@ -6,8 +6,8 @@ Linux provides powerful ways to handle data flow between commands and files usin
 
 Pipe (|) passes the output of one command as input to another command.
 
-```
 Examples:
+```
 ps aux | grep ssh         # Find processes related to ssh
 
 cat file.txt | wc -l      # Count number of lines in file.txt
@@ -36,7 +36,6 @@ Tip: Use > when you want a fresh file, >> to add to existing file.
 Examples:
 ```
 wc -l < file.txt      # Count lines from a file
-
 ```
 4️⃣ Combining Pipes and Redirects
 
