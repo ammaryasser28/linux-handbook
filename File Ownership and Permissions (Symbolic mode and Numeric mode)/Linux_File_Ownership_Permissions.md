@@ -29,6 +29,7 @@ Permissions define who can read, write, or execute a file:
 | `w`    | Write      |
 | `x`    | Execute    |
 
+
 Three categories:
 | Category | Symbol | Meaning                |
 | -------- | ------ | ---------------------- |
@@ -47,6 +48,8 @@ Change permissions using letters:
 | `chmod o=r file`           | Set read-only for others                     |
 | `chmod a+x file`           | Add execute permission for all (a = all)     |
 | `chmod u=rwx,g=rx,o= file` | Owner: rwx, Group: rx, Others: no permission |
+
+
 Notes:
 + → add permission
 - → remove permission
@@ -65,10 +68,13 @@ Permissions can also be set using numbers:
 | 5      | r-x (read + execute)         |
 | 6      | rw- (read + write)           |
 | 7      | rwx (read + write + execute) |
+
+
 Format: chmod XYZ filename
 X → owner permissions
 Y → group permissions
 Z → others permissions
+
 Example:
 chmod 755 script.sh
 7 → owner: rwx
@@ -81,6 +87,8 @@ chmod 755 script.sh
 | `chown user file`       | Change owner of file   |
 | `chown user:group file` | Change owner and group |
 | `chgrp group file`      | Change group of file   |
+
+
 Example:
 sudo chown amr:users file.txt
 sudo chgrp admin file.txt
