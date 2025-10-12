@@ -6,8 +6,8 @@ Linux provides powerful ways to handle data flow between commands and files usin
 
 Pipe (|) passes the output of one command as input to another command.
 
-Other Examples:
 ```
+Examples:
 ps aux | grep ssh         # Find processes related to ssh
 
 cat file.txt | wc -l      # Count number of lines in file.txt
