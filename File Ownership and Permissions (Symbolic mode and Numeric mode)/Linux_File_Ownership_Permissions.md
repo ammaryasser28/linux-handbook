@@ -56,11 +56,11 @@ Change permissions using letters:
 
 Notes:
 
-- + → add permission
+"+" → add permission
   
-- - → remove permission
+"-" → remove permission
 
-- = → set exact permission (removes any existing permissions first)
+"=" → set exact permission (removes any existing permissions first)
 
 🔢 4. Numeric (Octal) Mode
 
