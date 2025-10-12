@@ -11,9 +11,11 @@ Every file has owner, group, and permissions.
 | **Others** | All other users on the system      |
 
 Check ownership with:
+
 ls -l filename
 
 Example output:
+
 -rw-r--r-- 1 amr users 1024 Oct 12 13:00 file.txt
 
 amr → owner
@@ -53,11 +55,11 @@ Change permissions using letters:
 
 
 Notes:
-# + → add permission
+  + → add permission
   
-# - → remove permission
+  - → remove permission
 
-# = → set exact permission (removes any existing permissions first)
+  = → set exact permission (removes any existing permissions first)
 
 🔢 4. Numeric (Octal) Mode
 
