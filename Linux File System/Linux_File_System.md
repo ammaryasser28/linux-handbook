@@ -1,4 +1,5 @@
 🐧 Linux File System
+
 The Linux File System defines how data and files are organized and accessed in a Linux operating system.
 Unlike Windows (which uses drives like C:\ or D:\), Linux uses a single tree structure that starts from the root directory /.
 
