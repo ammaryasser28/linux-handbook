@@ -17,7 +17,9 @@ Example output:
 -rw-r--r-- 1 amr users 1024 Oct 12 13:00 file.txt
 
 amr → owner
+
 users → group
+
 rw-r--r-- → permissions
 
 🔐 2. Understanding Permissions
@@ -51,9 +53,11 @@ Change permissions using letters:
 
 
 Notes:
-+ → add permission
-- → remove permission
-= → set exact permission (removes any existing permissions first)
+# + → add permission
+  
+# - → remove permission
+
+# = → set exact permission (removes any existing permissions first)
 
 🔢 4. Numeric (Octal) Mode
 
@@ -71,14 +75,22 @@ Permissions can also be set using numbers:
 
 
 Format: chmod XYZ filename
+
 X → owner permissions
+
 Y → group permissions
+
 Z → others permissions
 
+
 Example:
+
 chmod 755 script.sh
+
 7 → owner: rwx
+
 5 → group: r-x
+
 5 → others: r-x
 
 🧭 5. Changing Ownership
@@ -90,11 +102,15 @@ chmod 755 script.sh
 
 
 Example:
+
 sudo chown amr:users file.txt
+
 sudo chgrp admin file.txt
 
 💡 Tips
 
 Use ls -l to check current permissions and ownership.
+
 Prefer symbolic mode for quick edits, numeric mode for exact settings.
+
 Always ensure proper permissions for security.
