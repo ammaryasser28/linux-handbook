@@ -104,12 +104,6 @@ chmod 755 script.sh
 | `chgrp group file`      | Change group of file   |
 
 
-Example:
-
-sudo chown amr:users file.txt
-
-sudo chgrp admin file.txt
-
 💡 Tips
 
 Use ls -l to check current permissions and ownership.
