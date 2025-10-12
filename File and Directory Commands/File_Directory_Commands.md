@@ -1,3 +1,5 @@
+📂 File and Directory Commands
+
 | Command         | Description                                  | Example                         |
 | --------------- | -------------------------------------------- | ------------------------------- |
 | `pwd`           | Print current working directory              | `pwd` → `/home/amr`             |
