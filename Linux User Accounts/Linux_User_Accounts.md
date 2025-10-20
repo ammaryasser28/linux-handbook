@@ -34,11 +34,13 @@ Managing user accounts and permissions is a key skill for system administration.
 
 
 🔑 4. Switching Users
-| Command        | Description                                |
-| -------------- | ------------------------------------------ |
-| `su username`  | Switch to another user (requires password) |
-| `sudo -i`      | Switch to root user                        |
-| `sudo command` | Run a single command as root               |
+| Command            | Description                                                                                                                                                        |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **`su`**           | Switch to the **root user** (or another user) **without loading their environment**. You stay in the same directory and keep the current environment variables.    |
+| **`su -`**         | Switch to the **root user** (or another user) **and load their full login environment** (like a fresh login). Changes directory to the user’s home (e.g. `/root`). |
+| **`su username`**  | Switch to a specific user (requires that user’s password). Keeps the current environment.                                                                          |
+| **`sudo command`** | Run **a single command** as root (or another user) **without switching sessions**. Uses your own password (if configured in `/etc/sudoers`).                       |
+| **`sudo -i`**      | Open an **interactive root shell** — similar to `su -`, but uses your credentials through `sudo` instead of asking for the root password.                          |
 
 
 💡 Tips
