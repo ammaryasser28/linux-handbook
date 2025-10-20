@@ -40,6 +40,7 @@ Managing user accounts and permissions is a key skill for system administration.
 | `sudo -i`      | Switch to root user                        |
 | `sudo command` | Run a single command as root               |
 
+
 💡 Tips
 
 Always use sudo for administrative tasks.
