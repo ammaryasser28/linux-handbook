@@ -7,9 +7,11 @@
 | **`ls -R`**  | List all files **recursively** — يظهر محتوى المجلدات وكل ما بداخلها.          | `ls -R work`                                |
 | **`ls -lr`** | List files **detailed + reverse time order** — أحدث الملفات في الآخر.         | `ls -lr`                                    |
 | **`cd`**     | Change the current directory.                                                 | `cd /etc`                                   |
+| **`cd .`**   | Stay in the **current directory** — مفيد في تحديث الـ Shell أو تنفيذ سكريبت.  | `cd .`                                      |
+| **`cd ..`**  | Go to the **parent directory** — ترجع خطوة لفوق في المسار.                    | `cd ..`                                     |
 | **`mkdir`**  | Create a new directory.                                                       | `mkdir test`                                |
 | **`rmdir`**  | Remove an empty directory.                                                    | `rmdir test`                                |
-| **`rm`**     | Remove files or directories.                                                  | `rm file.txt` or `rm -r folder`             |
+| **`rm`**     | Remove files or directories.                                                  | `rm file.txt` / `rm -r folder`              |
 | **`rm -i`**  | Remove files **with confirmation prompt** (safer).                            | `rm -i file.txt`                            |
 | **`rm -f`**  | Remove files **forcefully without asking** — ⚠️ very dangerous.               | `rm -f file.txt`                            |
 | **`cp`**     | Copy files or directories.                                                    | `cp file.txt /home/amr/`                    |
