@@ -4,6 +4,7 @@
 | ----------- | ------------------------------------------------------------------------------------------- | -------------------------------------------- |
 | **`pwd`**   | Print the current working directory.                                                        | `pwd` → `/home/amr`                          |
 | **`ls`**    | List files and directories.                                                                 | `ls -l` → detailed list                      |
+| **`ls -R`** | List all files **recursively** — يظهر محتوى المجلدات وكل ما بداخلها.                        | `ls -R work`                                 |
 | **`cd`**    | Change the current directory.                                                               | `cd /etc`                                    |
 | **`mkdir`** | Create a new directory.                                                                     | `mkdir test`                                 |
 | **`rmdir`** | Remove an empty directory.                                                                  | `rmdir test`                                 |
