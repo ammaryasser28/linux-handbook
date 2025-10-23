@@ -11,7 +11,7 @@
 | **`rm`**    | Remove files or directories.                                                                | `rm file.txt` or `rm -r folder`              |
 | **`cp`**    | Copy files or directories.                                                                  | `cp file.txt /home/amr/`                     |
 | **`mv`**    | Move or rename files.                                                                       | `mv old.txt new.txt`                         |
-| **`touch`** | Create an empty file or update its timestamp (or multiple files using brace expansion).     | `touch notes.txt` or `touch file{1..20}`     |
+| **`touch`** | Create an empty file or update its timestamp (or multiple files using brace expansion).     | `touch notes.txt` or `touch file{n..n}`     |
 | **`cat`**   | Display the contents of a file.                                                             | `cat file.txt`                               |
 | **`more`**  | View file contents **page by page (forward only)** — press `Space` to go to the next page.  | `more /etc/passwd`                           |
 | **`less`**  | View large files with **scrolling (forward & backward)** — use arrow keys or `/` to search. | `less /etc/passwd`                           |
