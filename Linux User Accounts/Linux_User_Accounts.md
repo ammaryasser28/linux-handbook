@@ -56,75 +56,10 @@ Avoid logging in directly as root; use sudo instead.
 Keep passwords strong and unique.
 Regularly check /etc/passwd and /etc/group for system auditing.
 
-
-# Ways to Grant Root / Administrative Privileges to a User
-
-Below table summarizes common methods to give a regular user administrative (root) capabilities on a Linux system. Each row shows the method, example command(s), pros, cons and a short recommendation.
-
-| Method (Arabic)                                   |                                      Method (English) | Example command(s)                                                      | Pros                                                          | Cons                                                         | Recommendation                                      |
-| ------------------------------------------------- | ----------------------------------------------------: | ----------------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------ | --------------------------------------------------- |
-| إضافة في `sudoers` عبر ملف منفصل                  |                         Add user via `/etc/sudoers.d` | ```bash                                                                 |                                                               |                                                              |                                                     |
-| echo "ammar ALL=(ALL) ALL"                        |                         sudo tee /etc/sudoers.d/ammar |                                                                         |                                                               |                                                              |                                                     |
-| sudo chmod 440 /etc/sudoers.d/ammar               |                                                       |                                                                         |                                                               |                                                              |                                                     |
-| ```                                               |                دقيق، قابل للتدقيق (logs)، سهل التراجع | يحتاج حذر عند تحرير sudoers (استخدم `visudo` أو ملفات `sudoers.d`)      | **مستحسن** — أفضل توازن بين أمان ومرونة                       |                                                              |                                                     |
-| إضافة للمجموعة التي تملك sudo (`sudo` أو `wheel`) |                      Add user to `sudo`/`wheel` group | Ubuntu/Debian: `sudo usermod -aG sudo ammar`                            |                                                               |                                                              |                                                     |
-| RHEL/Fedora: `sudo usermod -aG wheel ammar`       |            سهل للإدارة (مجموعات)، مناسب للـ ops teams | يعتمد على إعدادات `/etc/sudoers`؛ يمنح صلاحيات واسعة إذا المجموعة مفعلة | **مستحسن** إذا تم إدارة المجموعات بشكل صحيح                   |                                                              |                                                     |
-| منح صلاحيات محددة في ملف sudoers                  |              Grant limited sudo for specific commands | `echo "ammar ALL=(ALL) /usr/bin/apt, /usr/bin/systemctl"                | sudo tee /etc/sudoers.d/ammar-limited                         |                                                              |                                                     |
-| sudo chmod 440 /etc/sudoers.d/ammar-limited`      | يعطي أقل قدر ممكن من الامتيازات — مبدأ الأقل امتيازًا | يحتاج معرفة المسارات الدقيقة للأوامر؛ إدارة أكثر تعقيدًا                | **مستحسن** للمهام الآلية أو المحددة                           |                                                              |                                                     |
-| تمكين حساب root (تعريف كلمة مرور)                 |                      Enable root account (set passwd) | `sudo passwd root`                                                      | يتيح تسجيل دخول مباشر كـ root                                 | مخاطرة أمنية عالية؛ يصعب تتبع الأفعال والـ SSH login ممكن    | **غير مفضّل** إلا لحالة خاصة ومراقبة مشددة          |
-| تغيير UID إلى 0 (تحويل المستخدم إلى root فعليًا)  |              Change user's UID to 0 (make user UID=0) | `sudo usermod -u 0 -o ammar` (***خطير***)                               | يجعل المستخدم مكرراً لـ root جسمانياً                         | خطير جدًا: تعارضات ملكية، صعوبة في التتبع، مشاكل أمنية كبيرة | **لا يُنصح** مطلقًا إلا لخبراء وبحالة نادرة جداً    |
-| جعل برنامج يعمل بصلاحيات root عبر setuid          |                                         setuid binary | `sudo chown root:root /path/to/prog && sudo chmod 4755 /path/to/prog`   | يمكن منح وظيفة محددة صلاحية root دون إعطاء المستخدم root كامل | إذا لم يُكتب البرنامج بأمان يصبح ثغرة خطيرة                  | **لا يُنصح** إلا لمطورين ذوي خبرة ومع فحص أمني صارم |
-
----
-
-## Quick examples & notes
-
-### Example: give full sudo to `ammar` safely
-
-```bash
-echo "ammar ALL=(ALL) ALL" | sudo tee /etc/sudoers.d/ammar
-sudo chmod 440 /etc/sudoers.d/ammar
-```
-
-### Example: give `ammar` limited rights (only apt & systemctl)
-
-```bash
-echo "ammar ALL=(ALL) /usr/bin/apt, /usr/bin/systemctl" | sudo tee /etc/sudoers.d/ammar-limited
-sudo chmod 440 /etc/sudoers.d/ammar-limited
-```
-
-### Add `ammar` to `sudo` or `wheel` group
-
-```bash
-# Debian/Ubuntu
-sudo usermod -aG sudo ammar
-
-# RHEL/CentOS/Fedora
-sudo usermod -aG wheel ammar
-```
-
-### Enable root account (use with caution)
-
-```bash
-sudo passwd root
-```
-
-### Dangerous — change UID to 0 (do not use unless you know exactly why)
-
-```bash
-sudo usermod -u 0 -o ammar
-```
-
----
-
-## Short recommendations
-
-* **Best practice:** prefer `/etc/sudoers.d/` entries and limited sudo rules (least privilege).
-* **Use group-based approach** (`sudo`/`wheel`) for team management.
-* **Avoid changing UID to 0** or granting setuid binaries unless unavoidable and thoroughly audited.
-* **Avoid regular direct root logins**; prefer `sudo` for traceability.
-
-
-
-(غير `main` لاسم الفرع لو بتستخدم فرع مختلف)
-
+Ways to Grant Root / Administrative Privileges to a User
+| Method                                                           | Command Example                       | Safety        | Notes                                                             |
+| ---------------------------------------------------------------- | ------------------------------------- | ------------- | ----------------------------------------------------------------- |
+| **Editing `/etc/sudoers` manually (nano, vim, …)**               | `sudo nano /etc/sudoers`              | ❌ Risky       | Any syntax error can break sudo completely                        |
+| **Using `visudo` (recommended way)**                             | `sudo visudo`                         | ✅ Safe        | Checks syntax before saving — prevents breaking sudo              |
+| **Creating a sudoers file under `/etc/sudoers.d/` using visudo** | `sudo visudo -f /etc/sudoers.d/ammar` | ✅✅ Safest     | Separate file — easier to revoke, follows best security practices |
+| **Adding user to the wheel (or sudo) group**                     | `sudo usermod -aG wheel ammar`        | ✅ Medium Safe | Depends on system configuration — grants broad sudo privileges    |
