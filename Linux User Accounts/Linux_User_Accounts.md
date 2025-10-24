@@ -56,6 +56,7 @@ Avoid logging in directly as root; use sudo instead.
 Keep passwords strong and unique.
 Regularly check /etc/passwd and /etc/group for system auditing.
 
+
 Ways to Grant Root / Administrative Privileges to a User
 | Method                                                           | Command Example                       | Safety        | Notes                                                             |
 | ---------------------------------------------------------------- | ------------------------------------- | ------------- | ----------------------------------------------------------------- |
