@@ -57,7 +57,7 @@ Keep passwords strong and unique.
 Regularly check /etc/passwd and /etc/group for system auditing.
 
 
-Ways to Grant Root / Administrative Privileges to a User
+👤 Ways to Grant Root / Administrative Privileges to a User
 | Method                                                           | Command Example                       | Safety        | Notes                                                             |
 | ---------------------------------------------------------------- | ------------------------------------- | ------------- | ----------------------------------------------------------------- |
 | **Editing `/etc/sudoers` manually (nano, vim, …)**               | `sudo nano /etc/sudoers`              | ❌ Risky       | Any syntax error can break sudo completely                        |
