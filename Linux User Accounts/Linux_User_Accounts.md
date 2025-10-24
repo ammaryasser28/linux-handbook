@@ -3,6 +3,12 @@
 Linux is a multi-user system, which means multiple users can use the system simultaneously.
 Managing user accounts and permissions is a key skill for system administration.
 
+| Type             | Approx. UID Range | Purpose                                         |
+| ---------------- | ----------------: | ----------------------------------------------- |
+| root (superuser) |                 0 | Full system administration                      |
+| system users     |           1 – 999 | Accounts for system services (usually no login) |
+| regular users    |             1000+ | Normal human user accounts                      |
+
 🏷️ 1. Viewing Users and Groups
 | Command           | Description                                    |
 | ----------------- | ---------------------------------------------- |
