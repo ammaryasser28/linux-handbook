@@ -20,14 +20,23 @@ Managing user accounts and permissions is a key skill for system administration.
 
 
 ➕ 2. Creating and Modifying Users
-| Command                           | Description                                    |
-| --------------------------------- | ---------------------------------------------- |
-| `sudo adduser username`           | Create a new user (interactive, sets password) |
-| `sudo useradd username`           | Create a new user (non-interactive)            |
-| `sudo passwd username`            | Set or change user password                    |
-| `sudo usermod -aG group username` | Add user to a group                            |
-| `sudo deluser username`           | Remove a user (Debian/Ubuntu)                  |
-| `sudo userdel username`           | Remove a user (other distros)                  |
+| Command                                  | Description                                                             |
+| ---------------------------------------- | ----------------------------------------------------------------------- |
+| `sudo adduser username`                  | Create a new user (interactive, sets password)                          |
+| `sudo useradd username`                  | Create a new user (non-interactive)                                     |
+| `sudo passwd username`                   | Set or change user password                                             |
+| `sudo usermod username`                  | Modify an existing user account (settings & options)                    |
+| `sudo usermod -L username`               | Lock user account (disable login — keeps password but makes it invalid) |
+| `sudo usermod -U username`               | Unlock user account (restore login access)                              |
+| `sudo usermod -aG group username`        | Add user to **a secondary group** (without removing existing groups)    |
+| `sudo usermod -G group1,group2 username` | Set **secondary groups** (⚠️ replaces existing groups entirely)         |
+| `sudo usermod -g group username`         | Change the **primary group** of a user                                  |
+| `sudo usermod -u UID username`           | Change the user ID (UID)                                                |
+| `sudo usermod -s /bin/bash username`     | Change user's **login shell** (e.g., /bin/bash, /usr/sbin/nologin)      |
+| `sudo gpasswd -d username group`         | Remove user from a specific group                                       |
+| `sudo deluser username`                  | Remove a user (Debian/Ubuntu)                                           |
+| `sudo userdel username`                  | Remove a user (other distros)                                           |
+| `sudo userdel -r username`               | Remove user **and delete home directory & mailbox** 🗑️                 |
 
 
 🛡 3. Managing Groups
