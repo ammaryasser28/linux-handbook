@@ -9,6 +9,14 @@ Managing user accounts and permissions is a key skill for system administration.
 | system users     |           1 – 999 | Accounts for system services (usually no login) |
 | regular users    |             1000+ | Normal human user accounts                      |
 
+
+🏷️ Primary and Secondary Group
+| Type                     | What does it mean?                                  | Purpose / Usage                                                | Example                                                      |
+| ------------------------ | -------------------------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------ |
+| ✅ **Primary Group**      | The default group associated with the user          | Owns newly created files unless a group is explicitly set       | When the user creates a new file, it is assigned to this group |
+| 🔹 **Secondary Group(s)** | Additional groups the user is a member of          | Grant extra permissions and access to shared resources          | Accessing a directory owned by another group                 |
+
+
 🏷️ 1. Viewing Users and Groups
 | Command           | Description                                    |
 | ----------------- | ---------------------------------------------- |
@@ -40,12 +48,14 @@ Managing user accounts and permissions is a key skill for system administration.
 
 
 🛡 3. Managing Groups
-| Command                               | Description           |
-| ------------------------------------- | --------------------- |
-| `sudo groupadd groupname`             | Create a new group    |
-| `sudo groupdel groupname`             | Delete a group        |
-| `sudo usermod -aG groupname username` | Add user to a group   |
-| `groups username`                     | Show groups of a user |
+| Command                               | Description                                                                                              |
+| ------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `sudo groupadd groupname`             | Create a **new group** — system automatically assigns a Group ID (GID)                                   |
+| `sudo groupadd -g GID groupname`      | Create a **new group** with a specific **Group ID (GID)** — useful for permission management consistency |
+| `sudo groupdel groupname`             | Delete a group (⚠️ group must not be the primary group of any user)                                      |
+| `sudo usermod -aG groupname username` | Add a user to a **secondary group** without removing them from existing groups                           |
+| `groups username`                     | Show all groups a user belongs to (Primary + Secondary)                                                  |
+| `newgrp groupname`                    | Start a new shell session using the newly assigned group privileges (without logging out / back in)      |
 
 
 🔑 4. Switching Users
