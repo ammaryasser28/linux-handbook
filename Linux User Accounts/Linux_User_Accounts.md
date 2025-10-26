@@ -41,6 +41,7 @@ Managing user accounts and permissions is a key skill for system administration.
 | `sudo usermod -g group username`         | Change the **primary group** of a user                                  |
 | `sudo usermod -u UID username`           | Change the user ID (UID)                                                |
 | `sudo usermod -s /bin/bash username`     | Change user's **login shell** (e.g., /bin/bash, /usr/sbin/nologin)      |
+| `sudo gpasswd -a username group`         | Add user to a **specific group** (alternative to `usermod -aG`)         |
 | `sudo gpasswd -d username group`         | Remove user from a specific group                                       |
 | `sudo deluser username`                  | Remove a user (Debian/Ubuntu)                                           |
 | `sudo userdel username`                  | Remove a user (other distros)                                           |
@@ -53,9 +54,11 @@ Managing user accounts and permissions is a key skill for system administration.
 | `sudo groupadd groupname`             | Create a **new group** — system automatically assigns a Group ID (GID)                                   |
 | `sudo groupadd -g GID groupname`      | Create a **new group** with a specific **Group ID (GID)** — useful for permission management consistency |
 | `sudo groupdel groupname`             | Delete a group (⚠️ group must not be the primary group of any user)                                      |
-| `sudo usermod -aG groupname username` | Add a user to a **secondary group** without removing them from existing groups                           |
+| `sudo groupmod -n newname oldname`    | Rename an existing group (changes group name but keeps the same GID)                                     |
+| `sudo groupmod -g GID groupname`      | Change the **Group ID (GID)** of an existing group                                                       |
+| `sudo groupmod -aG groupname user`    | Add a **secondary group** to a user via group context (rare use case)                                    |
 | `groups username`                     | Show all groups a user belongs to (Primary + Secondary)                                                  |
-| `newgrp groupname`                    | Start a new shell session using the newly assigned group privileges (without logging out / back in)      |
+| `newgrp groupname`                    | Start a new shell session using newly assigned group privileges (without logging out / back in)          |
 
 
 🔑 4. Switching Users
