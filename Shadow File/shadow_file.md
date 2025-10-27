@@ -32,7 +32,7 @@ username:password:last_change:min:max:warn:inactive:expire:reserved
 | **max**         | Maximum days before password must be changed         |
 | **warn**        | Days before expiration to warn the user              |
 | **inactive**    | Days after expiration before account is disabled     |
-| **expire**      | Date (in days since epoch) when account expires      |
+| **expire**      | Date (in days since epoch 1/1/1970) when account expires      |
 | **reserved**    | Reserved for future use                              |
 
 🔑 Password Field Special Values
