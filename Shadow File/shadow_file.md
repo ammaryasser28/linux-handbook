@@ -1,7 +1,9 @@
 🛡️ Understanding /etc/shadow in Linux
+
 📌 Overview
 
 The /etc/shadow file in Linux stores hashed passwords and password aging information for system users.
+
 It is highly protected and can only be read by the root user, making system authentication more secure.
 
 🔐 Why /etc/shadow?
@@ -16,6 +18,7 @@ To fix that, Linux systems started storing password hashes inside the shadow fil
 🧩 File Structure
 
 Each line in /etc/shadow represents one user account.
+
 The fields are separated using : and structured as follows:
 ```
 username:password:last_change:min:max:warn:inactive:expire:reserved
@@ -52,9 +55,13 @@ username:password:last_change:min:max:warn:inactive:expire:reserved
 amr:$6$8Fhuw...$d9Lp5..:19500:0:99999:7:::
 ```
 Breakdown:
+
 $6$ → SHA-512 encryption
+
 19500 → Last changed password date
+
 99999 → Password practically never expires
+
 7 → Warn 7 days before expiration
 
 ✅ Security Notes
@@ -64,6 +71,7 @@ File permissions must remain strict:
 -r-------- 1 root root /etc/shadow
 ```
 Hashes should always use strong algorithms (SHA-512)
+
 Removing password or setting it to ! should be done with caution
 
 
