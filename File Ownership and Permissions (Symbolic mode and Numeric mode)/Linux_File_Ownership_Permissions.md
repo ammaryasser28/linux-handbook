@@ -42,6 +42,12 @@ Three categories:
 | Group    | `g`    | Group members          |
 | Others   | `o`    | Everyone else          |
 
+🧠 Difference Between rwx for Files and Directories
+| Permission      | On **Files** 📝                                                                   | On **Directories** 📁                                                                                                      |
+| --------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| **r (read)**    | Allows **viewing** the file’s content (e.g., using `cat`, `less`, or opening it). | Allows **listing** the contents of the directory (`ls`). You can *see filenames*, but not necessarily open them.           |
+| **w (write)**   | Allows **modifying** the file’s content (edit, delete, append).                   | Allows **creating, deleting, or renaming** files **inside** the directory.                                                 |
+| **x (execute)** | Allows **running** the file as a program or script.                               | Allows **accessing** (entering) the directory with `cd`, or accessing files **inside** it (if you already know the names). |
 
 ✏️ 3. Symbolic Mode (u/g/o/a + +, -, =)
 
